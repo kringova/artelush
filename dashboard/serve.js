@@ -1223,17 +1223,17 @@ function approveTask(id) {
   if (changed === md) throw Object.assign(new Error("status: review не найден в файле"), { status: 409 });
 
   // updated
-  if (/^updated:\s*.*$/m.test(changed)) {
-    changed = changed.replace(/^updated:\s*.*$/m, `updated: ${today}`);
+  if (/^updated:.*$/m.test(changed)) {
+    changed = changed.replace(/^updated:.*$/m, `updated: ${today}`);
   } else {
     changed = changed.replace(/^(status:\s*done)$/m, `$1\nupdated: ${today}`);
   }
 
   // closed_at
-  if (/^closed_at:\s*.*$/m.test(changed)) {
-    changed = changed.replace(/^closed_at:\s*.*$/m, `closed_at: ${now}`);
+  if (/^closed_at:.*$/m.test(changed)) {
+    changed = changed.replace(/^closed_at:.*$/m, `closed_at: ${now}`);
   } else {
-    changed = changed.replace(/^updated:\s*.*$/m, (m) => `${m}\nclosed_at: ${now}`);
+    changed = changed.replace(/^updated:.*$/m, (m) => `${m}\nclosed_at: ${now}`);
   }
 
   writeFileSync(taskFile, changed, "utf8");
