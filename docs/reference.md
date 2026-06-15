@@ -6,6 +6,7 @@
 ```
 AGENTS.md            канонические правила для агента (вендор-нейтрально)
 CLAUDE.md            шим @AGENTS.md для Claude Code
+artel.config.json    выбор дашборда: {"dashboard":"mini"|"full"} (пишет навык setup)
 _rules.md            полная методология
 _dashboard.md        Dataview-сводка: проекты, беклог по RICE, канбан
 _templates/
@@ -29,11 +30,14 @@ projects/
       tasks.md       Dataview-индекс задач проекта
       <имя>.md       задачи
 skills/
+  setup/SKILL.md     первый запуск vault: онбординг + выбор дашборда (mini/full), пишет artel.config.json
   sync/SKILL.md      контекст всех проектов в сессию
   backlog/SKILL.md   завести задачу
   close/SKILL.md     закрыть задачу (done + лог); постфактум-задача
   recap/SKILL.md     итоги за период
   inbox/SKILL.md     разобрать инбокс
+  onboard/SKILL.md   brownfield-канон: поднять первичную доку по существующему проекту из артефактов и кода
+  charter/SKILL.md   рождение проекта: стартовый набор доки (brief, карточка с jtbd, roadmap) до первой задачи
 docs/
   methodology.md     принципы, проекты, задачи, RICE, жизненный цикл
   roles.md           роли команды и их включение по RICE

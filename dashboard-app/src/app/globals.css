@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --color-accent: #ef6b5b;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  /* Backstop от горизонтального выезжания на мобиле: hidden поддержан везде
+     (в отличие от body overflow-x:clip на старых iOS Safari) и сохраняет
+     sticky-шапку (скролл-контейнер = html/viewport). Корневой фикс — grid-cols-1
+     на гридах, это страховка. */
+  overflow-x: hidden;
+}
+
+body {
+  @apply bg-neutral-50 text-neutral-800 antialiased;
+  font-family: var(--font-sans);
+}
+
+/* Рендер тела markdown-задач/проектов */
+.md-body {
+  @apply text-[15px] leading-relaxed text-neutral-700;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.md-body pre {
+  @apply overflow-x-auto;
+  max-width: 100%;
+}
+.md-body h2 {
+  @apply mt-6 mb-2 text-base font-semibold text-neutral-900;
+}
+.md-body h3 {
+  @apply mt-5 mb-2 text-sm font-semibold text-neutral-800;
+}
+.md-body p {
+  @apply my-3;
+}
+.md-body ul {
+  @apply my-3 list-disc space-y-1 pl-5;
+}
+.md-body ol {
+  @apply my-3 list-decimal space-y-1 pl-5;
+}
+.md-body a {
+  @apply text-[color:var(--color-accent)] underline underline-offset-2;
+}
+.md-body code {
+  @apply rounded bg-neutral-100 px-1 py-0.5 text-[13px];
+}
+.md-body table {
+  @apply my-3 w-full border-collapse text-sm;
+}
+.md-body th,
+.md-body td {
+  @apply border border-neutral-200 px-2 py-1 text-left;
+}
+.md-body blockquote {
+  @apply my-3 border-l-2 border-neutral-300 pl-3 text-neutral-500;
+}
+.md-body hr {
+  @apply my-5 border-neutral-200;
+}
+/* чеклисты (DoD) */
+.md-body input[type="checkbox"] {
+  @apply mr-2 align-middle accent-[color:var(--color-accent)];
+}
+.md-body li:has(input[type="checkbox"]) {
+  @apply list-none;
+  margin-left: -1.25rem;
+}
