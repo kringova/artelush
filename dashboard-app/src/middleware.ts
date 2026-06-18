@@ -80,7 +80,7 @@ export async function middleware(req: NextRequest) {
 
   return new NextResponse("Требуется авторизация", {
     status: 401,
-    headers: { "WWW-Authenticate": 'Basic realm="artel"' },
+    headers: { "WWW-Authenticate": 'Basic realm="ogorod"' },
   });
 }
 

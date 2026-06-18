@@ -52,7 +52,7 @@ export async function POST(req: Request) {
         execFileSync("git", args, {
           cwd: VAULT_PATH,
           stdio: "pipe",
-          env: { ...process.env, ARTEL_APPROVE: "1" },
+          env: { ...process.env, OGOROD_APPROVE: "1" },
         });
       git("add", task.file);
       git("commit", "-m", `close: ${key} approved`);

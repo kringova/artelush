@@ -1,7 +1,7 @@
-<!-- Audience: контрибьютор/агент, который меняет artel-dashboard
+<!-- Audience: контрибьютор/агент, который меняет ogorod-dashboard
      Purpose: понять поток данных и модули, чтобы менять без сюрпризов -->
 
-# Архитектура artel-dashboard
+# Архитектура ogorod-dashboard
 
 ## Принцип
 

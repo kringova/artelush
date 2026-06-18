@@ -1,7 +1,7 @@
-<!-- Audience: агент / новый разработчик в проекте artel-dashboard
+<!-- Audience: агент / новый разработчик в проекте ogorod-dashboard
      Purpose: за минуту понять команды, структуру и конвенции, чтобы работать без объяснений -->
 
-# AGENTS.md — artel-dashboard
+# AGENTS.md — ogorod-dashboard
 
 Веб-дашборд vault Огорода: читает markdown-файлы (`projects/*`, задачи, RICE) и показывает проекты, канбан, приоритеты, инбокс. Next.js 15 (app router) · React 19 · Tailwind v4 · gray-matter · remark · **без БД**. Корень репозитория = корень проекта.
 

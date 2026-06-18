@@ -6,7 +6,7 @@
 ```
 AGENTS.md            канонические правила для агента (вендор-нейтрально)
 CLAUDE.md            шим @AGENTS.md для Claude Code
-artel.config.json    выбор дашборда: {"dashboard":"mini"|"full"} (пишет навык setup)
+ogorod.config.json    выбор дашборда: {"dashboard":"mini"|"full"} (пишет навык setup)
 _rules.md            полная методология
 _dashboard.md        Dataview-сводка: проекты, беклог по RICE, канбан
 _templates/
@@ -30,7 +30,7 @@ projects/
       tasks.md       Dataview-индекс задач проекта
       <имя>.md       задачи
 skills/
-  setup/SKILL.md     первый запуск vault: онбординг + выбор дашборда (mini/full), пишет artel.config.json
+  setup/SKILL.md     первый запуск vault: онбординг + выбор дашборда (mini/full), пишет ogorod.config.json
   sync/SKILL.md      контекст всех проектов в сессию
   backlog/SKILL.md   завести задачу
   close/SKILL.md     закрыть задачу (done + лог); постфактум-задача

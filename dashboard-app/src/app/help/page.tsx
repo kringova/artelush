@@ -2,7 +2,7 @@ import Link from "next/link";
 import GradeBadge from "@/components/GradeBadge";
 
 export const metadata = {
-  title: "Справка — Artel Dashboard",
+  title: "Справка — Огород",
 };
 
 export default function HelpPage() {

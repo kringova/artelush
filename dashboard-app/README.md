@@ -1,4 +1,4 @@
-# Artel Dashboard
+# Огород
 
 Полный веб-дашборд (tier 2) для vault Огорода на Next.js 15.
 
@@ -17,7 +17,7 @@ VAULT_PATH=/path/to/vault npm run dev
 |--------------------|--------------------------------------------|-------------|
 | `VAULT_PATH`       | Путь к корню vault (папка с `projects/`)   | Да          |
 | `DASHBOARD_PASSWORD` | Пароль для HTTP Basic Auth (если нужен) | Нет         |
-| `ARTEL_APPROVE`    | Установи `1` для включения апрува задач    | Нет         |
+| `OGOROD_APPROVE`    | Установи `1` для включения апрува задач    | Нет         |
 
 ## Сборка и запуск в продакшне
 
@@ -28,15 +28,15 @@ npm start
 
 ## Деплой (пример: Linux + systemd + nginx)
 
-1. Создай systemd-сервис `/etc/systemd/system/artel-dashboard.service`:
+1. Создай systemd-сервис `/etc/systemd/system/ogorod-dashboard.service`:
 
 ```ini
 [Unit]
-Description=Artel Dashboard
+Description=Огород
 After=network.target
 
 [Service]
-WorkingDirectory=/opt/artel-dashboard
+WorkingDirectory=/opt/ogorod-dashboard
 ExecStart=/usr/bin/node server.js
 Restart=always
 Environment=NODE_ENV=production
@@ -66,6 +66,6 @@ server {
 3. Активируй:
 
 ```bash
-systemctl enable artel-dashboard
-systemctl start artel-dashboard
+systemctl enable ogorod-dashboard
+systemctl start ogorod-dashboard
 ```

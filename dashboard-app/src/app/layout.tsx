@@ -5,7 +5,7 @@ import { BottomNav } from "@/components/BottomNav";
 import { getAllTasks } from "@/lib/vault";
 
 export const metadata: Metadata = {
-  title: "Artel Dashboard",
+  title: "Огород",
   description: "Проекты, задачи и приоритеты из vault Огорода",
 };
 

@@ -23,7 +23,7 @@ user_invocable: true
    - `projects/<slug>/<slug>.md` — статус, приоритет, аудитория, метрики, лог сессий, топ-задача.
    - `projects/<slug>/roadmap.md` — фазы и текущий этап.
    - `projects/<slug>/tasks/*.md` — статусы и RICE. Хватает frontmatter; для скорости можно `grep` по `status:`, `rice_*`, `summary:`, `next_up:`, не читая тела.
-7. `artel.config.json` — поле `ogorod_version` (текущая версия шаблона у этого vault'а), для проверки обновлений ниже.
+7. `ogorod.config.json` — поле `ogorod_version` (текущая версия шаблона у этого vault'а), для проверки обновлений ниже.
 
 RICE считается: `(rice_reach × rice_impact × rice_confidence/100) / rice_effort`.
 
@@ -35,11 +35,11 @@ RICE считается: `(rice_reach × rice_impact × rice_confidence/100) / r
 curl -fsS --max-time 4 https://api.github.com/repos/kringova/ogorodush/releases/latest
 ```
 
-Возьми из ответа `tag_name` и `body`. Если `tag_name` (semver, без префикса `v`) **новее** локального `ogorod_version` из `artel.config.json` — выведи **первым** блок «🌱 Обновление Огорода» (формат ниже) с версией и кратким `body`. Иначе — блок не выводи.
+Возьми из ответа `tag_name` и `body`. Если `tag_name` (semver, без префикса `v`) **новее** локального `ogorod_version` из `ogorod.config.json` — выведи **первым** блок «🌱 Обновление Огорода» (формат ниже) с версией и кратким `body`. Иначе — блок не выводи.
 
 - Любая ошибка (офлайн, лимит API, нет поля, нет `curl`) → **молча пропусти**: проверка не должна ломать sync.
 - Проверка **read-only**: только GET, ничего не пишем (троттл-файл не заводим — один вызов на старт сессии в пределах лимита API).
-- Нет `ogorod_version` (легаси-vault) → покажи актуальную версию апстрима и предложи отметить её в `artel.config.json`.
+- Нет `ogorod_version` (легаси-vault) → покажи актуальную версию апстрима и предложи отметить её в `ogorod.config.json`.
 
 Применить обновление — **отдельное действие** по команде «обнови Огород»: подтянуть свежие `_rules.md` / `skills/` / `docs/` / `_templates/` из апстрима и записать новую версию в `ogorod_version`. Сам `sync` обновление не применяет.
 

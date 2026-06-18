@@ -24,7 +24,7 @@ import sys
 
 if any(
     os.environ.get(v) == "1"
-    for v in ("GIT_SCOPE_OK", "LLMUSH_APPROVE", "ARTEL_APPROVE")
+    for v in ("GIT_SCOPE_OK", "LLMUSH_APPROVE", "OGOROD_APPROVE")
 ):
     sys.exit(0)
 

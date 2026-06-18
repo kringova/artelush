@@ -1236,11 +1236,11 @@ function approveTask(id) {
 
   // Git (опционально)
   let pushed = false;
-  if (process.env.ARTEL_GIT_PUSH) {
+  if (process.env.OGOROD_GIT_PUSH) {
     try {
       const git = (...a) => execFileSync("git", a, {
         cwd: ROOT, stdio: "pipe",
-        env: { ...process.env, ARTEL_APPROVE: "1" },
+        env: { ...process.env, OGOROD_APPROVE: "1" },
       });
       git("add", taskFile);
       git("commit", "-m", `close: #${numId} approved`);
