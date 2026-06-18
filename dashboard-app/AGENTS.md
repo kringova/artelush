@@ -3,7 +3,7 @@
 
 # AGENTS.md — artel-dashboard
 
-Веб-дашборд vault Артели: читает markdown-файлы (`projects/*`, задачи, RICE) и показывает проекты, канбан, приоритеты, инбокс. Next.js 15 (app router) · React 19 · Tailwind v4 · gray-matter · remark · **без БД**. Корень репозитория = корень проекта.
+Веб-дашборд vault Огорода: читает markdown-файлы (`projects/*`, задачи, RICE) и показывает проекты, канбан, приоритеты, инбокс. Next.js 15 (app router) · React 19 · Tailwind v4 · gray-matter · remark · **без БД**. Корень репозитория = корень проекта.
 
 ## Команды
 

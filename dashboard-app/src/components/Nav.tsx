@@ -71,7 +71,7 @@ export default function Nav({ reviewCount = 0 }: { reviewCount?: number }) {
           <span className="grid h-6 w-6 place-items-center rounded-md bg-[color:var(--color-accent)] text-xs font-bold text-white">
             A
           </span>
-          <span className="hidden sm:inline">Артель</span>
+          <span className="hidden sm:inline">Огород</span>
         </Link>
         {/* Десктоп: полная навигация в шапке */}
         <nav className="hidden min-w-0 flex-1 items-center gap-1 lg:flex">

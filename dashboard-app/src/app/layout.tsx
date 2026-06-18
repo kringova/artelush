@@ -6,7 +6,7 @@ import { getAllTasks } from "@/lib/vault";
 
 export const metadata: Metadata = {
   title: "Artel Dashboard",
-  description: "Проекты, задачи и приоритеты из vault Артели",
+  description: "Проекты, задачи и приоритеты из vault Огорода",
 };
 
 export const dynamic = "force-dynamic";

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Локальный дашборд Артель. Без зависимостей: читает markdown-vault и отдаёт веб-страницу.
+// Локальный дашборд Огород. Без зависимостей: читает markdown-vault и отдаёт веб-страницу.
 // Запуск из корня vault:  node dashboard/serve.js  [--port 4321] [--root PATH] [--open]
 // Страницы: /  (Проекты)  /kanban  /rice  /inbox  /analytics  /search?q=…  /t/<id>  /p/<slug>
 
@@ -778,7 +778,7 @@ function render(data, page, extra = {}) {
     : page === "rice" ? "открытые задачи по убыванию RICE"
     : page === "inbox" ? `${inbox.length} записей на разбор`
     : page === "analytics" ? `${projects.length} проектов · ${tasks.length} задач`
-    : page === "help" ? "дашборд Артели — краткое руководство"
+    : page === "help" ? "дашборд Огорода — краткое руководство"
     : `${projects.length} проектов · ${open.length} открытых задач`;
 
   content = def.build(data);
@@ -786,7 +786,7 @@ function render(data, page, extra = {}) {
 }
 
 function render404(msg) {
-  return `<!doctype html><html lang="ru"><head><meta charset="utf-8"><title>404 — Артель</title>
+  return `<!doctype html><html lang="ru"><head><meta charset="utf-8"><title>404 — Огород</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>body{font:15px/1.5 ui-sans-serif,sans-serif;margin:0;background:#fafafa;color:#262626;display:flex;align-items:center;justify-content:center;min-height:100vh}
   .box{text-align:center;padding:40px}.h{font-size:72px;font-weight:700;color:#e5e5e5;margin:0}p{color:#737373}</style>
@@ -795,7 +795,7 @@ function render404(msg) {
 
 function helpPage() {
   return `<div class="help-page" style="max-width:680px">
-    <p class="help-intro">Артель-дашборд — веб-витрина markdown-vault: проекты и задачи читаются из файлов vault при каждом запросе и отображаются без базы данных.</p>
+    <p class="help-intro">Огород-дашборд — веб-витрина markdown-vault: проекты и задачи читаются из файлов vault при каждом запросе и отображаются без базы данных.</p>
     <h2 class="md-h" style="margin-top:20px">Страницы</h2>
     <ul class="md-ul">
       <li><strong>Проекты</strong> (<code>/</code>) — карточки всех проектов с прогрессом и топ-задачей по RICE.</li>
@@ -823,7 +823,7 @@ function renderShell(data, page, title, subtitle, content) {
   const envelopeSvg = `<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:block"><rect x="2" y="4" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M2 7l8 5 8-5" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>`;
   return `<!doctype html><html lang="ru"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Артель — ${esc(title)}</title>
+<title>Огород — ${esc(title)}</title>
 <style>
   :root { --accent:#ef6b5b; --ink:#262626; --muted:#737373; --line:#e5e5e5; --bg:#fafafa; }
   * { box-sizing:border-box; }
@@ -1014,7 +1014,7 @@ function renderShell(data, page, title, subtitle, content) {
   @media (max-width:580px){ .grid,.kanban,.kanban-4,.an-grid{grid-template-columns:1fr} .link{padding:6px 8px} .kb-filterbar{margin-top:12px} #toast-container{bottom:16px;right:16px;left:16px} }
 </style></head><body>
 <nav class="nav"><div class="nav-in">
-  <a class="logo" href="/"><i>ll</i> Артель</a>
+  <a class="logo" href="/"><i>ll</i> Огород</a>
   ${link("/", "Проекты", "projects")}
   ${link("/kanban", "Канбан", "kanban")}
   ${link("/rice", "RICE", "rice")}
@@ -1341,7 +1341,7 @@ const server = createServer((req, res) => {
 
 server.listen(PORT, () => {
   const url = `http://localhost:${PORT}`;
-  console.log(`\n  Артель дашборд → ${url}\n  vault: ${ROOT}\n  Ctrl+C для остановки\n`);
+  console.log(`\n  Огород дашборд → ${url}\n  vault: ${ROOT}\n  Ctrl+C для остановки\n`);
   if (OPEN) {
     const cmd = process.platform === "darwin" ? "open" : process.platform === "win32" ? "start" : "xdg-open";
     spawn(cmd, [url], { stdio: "ignore", detached: true, shell: process.platform === "win32" }).unref();

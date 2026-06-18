@@ -1,6 +1,6 @@
 # Artel Dashboard
 
-Полный веб-дашборд (tier 2) для vault Артели на Next.js 15.
+Полный веб-дашборд (tier 2) для vault Огорода на Next.js 15.
 
 ## Быстрый старт
 
